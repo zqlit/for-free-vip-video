@@ -1,18 +1,33 @@
 <script setup>
-import { ref,onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { LewMessage } from 'lew-ui'; // 假设这是用于显示消息的库
 
 //生命周期钩子
 onMounted(() => {
-  inputRef.value.focus()
+  //重要的事情说三遍
+  LewNotification.success({
+    title: '温馨提示',
+    content: '如果您是第一次使用本站，请先阅读新手教程',
+    delay: 30000
+  })
+  LewNotification.success({
+    title: '温馨提示',
+    content: '如果您是第一次使用本站，请先阅读新手教程',
+    delay: 30000
+  })
+  LewNotification.success({
+    title: '温馨提示',
+    content: '如果您是第一次使用本站，请先阅读新手教程',
+    delay: 30000
+  })
 });
 
 // 响应式变量
 const options = ref([
   { label: '虾米解析', value: 'https://jx.xmflv.com/?url=' },
-  { label: '快速配送', value: 'express' },
-  { label: '次日达', value: 'nextDay' },
-  { label: '同城急送', value: 'sameDay' }
+  { label: '待添加', value: 'express' },
+  { label: '待添加', value: 'nextDay' },
+  { label: '待添加', value: 'sameDay' }
 ]);
 
 const selectedShipping = ref('');
@@ -48,19 +63,21 @@ const openJC = () => {
 }
 // 点击按钮时打开新标签页
 const openNewTab = (val) => {
-    window.open(val, '_blank'); // 打开新的标签页
+  window.open(val, '_blank'); // 打开新的标签页
 };
 </script>
 
 <template>
   <div id="content">
     <div class="head">
-      <span style="text-align: center;margin-bottom: 10px;">Vip免费视频解析</span><lew-button  color="red" size="medium" text="点我查看教程"
-        dashed type="ghost" @click="openJC" />
+      <span style="text-align: center;margin-bottom: 10px;">Vip免费视频解析</span>
+      <lew-badge value="important!" round color="red" style="display: inline-block;">
+        <lew-button color="black" size="medium" text="点我查看教程" dashed type="ghost" @click="openJC" />
+      </lew-badge>
     </div>
     <!-- 抽屉 -->
     <lew-flex gap="20" x="start">
-      <lew-drawer title="使用教程" close-by-esc v-model:visible="visible" position="right" hideFooter="true">
+      <lew-drawer title="使用教程" close-by-esc v-model:visible="visible" position="left" hideFooter="true">
         <div class="jc-text">
           <h2>操作指南：</h2>
           <h3>第一步：</h3>
@@ -81,7 +98,7 @@ const openNewTab = (val) => {
       <div class="route">
         <lew-select v-model="jxUrl" clearable size="medium" placeholder="选择解析方式" :options="options" />
       </div>
-      <lew-input v-model="videoUrl" align="left" placeholder="请键入视频链接" class="search" selectByFocus="true" ref="inputRef" />
+      <lew-input v-model="videoUrl" align="left" placeholder="请键入视频链接" class="search" selectByFocus="true" />
       <lew-button class="click" :request="handleRequest" text="播放" type="light" color="var(--lew-text-color-1);" />
       <lew-button class="click clear" text="清空" type="light" color="var(--lew-text-color-1);"
         @click="videoUrl = ''; iframeUrl = '';" />
@@ -92,13 +109,17 @@ const openNewTab = (val) => {
 
     <div class="footer">
       <lew-flex direction="y" gap="20">
-    <lew-flex wrap x="center" gap="10">
-      <lew-button size="medium" @click="openNewTab('https://v.qq.com')" text="进入腾讯视频" color="green" dashed type="ghost" />
-      <lew-button size="medium" @click="openNewTab('https://www.iqiyi.com')" text="进入爱奇艺视频" color="green" dashed type="ghost" />
-      <lew-button size="medium" @click="openNewTab('https://youku.com')" text="进入优酷视频" color="green" dashed type="ghost" />
-      <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="green" dashed type="ghost" />
-    </lew-flex>
-  </lew-flex>
+        <lew-flex wrap x="center" gap="10">
+          <lew-button size="medium" @click="openNewTab('https://v.qq.com')" text="进入腾讯视频" color="black" dashed
+            type="ghost" />
+          <lew-button size="medium" @click="openNewTab('https://www.iqiyi.com')" text="进入爱奇艺视频" color="black" dashed
+            type="ghost" />
+          <lew-button size="medium" @click="openNewTab('https://youku.com')" text="进入优酷视频" color="black" dashed
+            type="ghost" />
+          <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="black" dashed
+            type="ghost" />
+        </lew-flex>
+      </lew-flex>
     </div>
   </div>
 </template>
@@ -108,11 +129,11 @@ const openNewTab = (val) => {
   display: inline-table;
 }
 
-.head{
+.head {
   text-align: center;
 }
 
-.head span{
+.head span {
   font-size: 1.5em;
   margin-right: 10px;
 }
