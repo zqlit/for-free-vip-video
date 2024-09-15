@@ -114,18 +114,25 @@ const openNewTab = (val) => {
     <!-- 播放器 -->
     <iframe :src="iframeUrl" class="player" allowfullscreen allowtransparency></iframe>
 
-    <div class="footer">
+    <div class="footer" style="margin-top: -16px;">
       <lew-flex direction="y" gap="20">
+        <lew-mark color="red">注意：视频如果有广告是解析接口内置与本站无关，请勿相信！</lew-mark>
         <lew-flex wrap x="center" gap="10">
           <lew-button size="medium" @click="openNewTab('https://v.qq.com')" text="进入腾讯视频" color="black" dashed
             type="ghost" />
           <lew-button size="medium" @click="openNewTab('https://www.iqiyi.com')" text="进入爱奇艺视频" color="black" dashed
+            type="ghost" />
+            <lew-button size="medium" @click="openNewTab('https://www.bilibili.com/movie')" text="进入bilibili视频" color="black" dashed
             type="ghost" />
           <lew-button size="medium" @click="openNewTab('https://youku.com')" text="进入优酷视频" color="black" dashed
             type="ghost" />
           <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="black" dashed
             type="ghost" />
         </lew-flex>
+        <lew-mark color="green">本项目已开源Github,欢迎star✌️! </lew-mark>
+        <lew-mark type="light" color="green">Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击这里跳转项目地址</a></lew-mark>
+        <lew-mark color="red">免责声明：解析服务仅限小伙伴们学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
+        © 2019 - 2024 Designed by 小赵同学
       </lew-flex>
     </div>
   </div>
