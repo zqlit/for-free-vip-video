@@ -1,29 +1,10 @@
-# for-free-vip-video
 
-This template should help get you started developing with Vue 3 in Vite.
+Vip免费视频解析
 
-## Recommended IDE Setup
+使用Vue3和Lew UI构建
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+傻瓜式操作，点击链接即可使用
 
-## Customize configuration
+https://qunlin.deno.dev
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+![d2876adaf900b5234c0ad2fd31e6748f.png](https://ice.frostsky.com/2024/09/15/d2876adaf900b5234c0ad2fd31e6748f.png)
