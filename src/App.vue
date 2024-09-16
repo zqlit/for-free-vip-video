@@ -108,7 +108,7 @@ const openNewTab = (val) => {
       <lew-input v-model="videoUrl" align="left" placeholder="请键入视频链接" class="search" selectByFocus="true" />
       <lew-button class="click" :request="handleRequest" text="播放" type="light" color="var(--lew-text-color-1);" />
       <lew-button class="click clear" text="清空" type="light" color="var(--lew-text-color-1);"
-        @click="videoUrl = ''; iframeUrl = '';" />
+        @click="videoUrl = ''; iframeUrl = options.value[0].value;" />
     </div>
 
     <!-- 播放器 -->
