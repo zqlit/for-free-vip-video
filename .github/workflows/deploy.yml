@@ -37,7 +37,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "for-free-vi-73"
+          project: "qunlin"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
           root: "dist"
         env:
