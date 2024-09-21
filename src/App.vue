@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { LewMessage } from 'lew-ui'; // 假设这是用于显示消息的库
+import { LewMessage } from 'lew-ui'; 
 
 //生命周期钩子
 onMounted(() => {
