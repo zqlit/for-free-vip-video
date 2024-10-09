@@ -33,8 +33,7 @@ If you think this project is good, please give it a star 🤩
 ## 安装 (Installation)
 
 ### 前提条件 (Prerequisites)
-- Node.js (version x.x.x)
-- npm (version x.x.x)
+- Node.js (version 22.4.1)
 
 ### 步骤 (Steps)
 ```sh
@@ -71,6 +70,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 联系 (Contact)
 如有任何问题或建议，请在 [GitHub](https://github.com/zqlit/for-free-vip-video/issues) 上提交问题。  
 For any questions or issues, please open an issue on [GitHub](https://github.com/zqlit/for-free-vip-video/issues).
-
-![d2876adaf900b5234c0ad2fd31e6748f.png](https://ice.frostsky.com/2024/09/15/d2876adaf900b5234c0ad2fd31e6748f.png)
 
