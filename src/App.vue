@@ -22,6 +22,7 @@ onMounted(() => {
   })
 });
 
+
 const options = ref([
   { label: '虾米解析', value: 'https://jx.xmflv.com/?url=' },
   { label: '八戒解析', value: 'https://jx.m3u8.tv/jiexi/?url=' },
@@ -151,7 +152,7 @@ const openNewTab = (url) => {
         <lew-mark color="green">本项目已开源Github,欢迎star✌️! </lew-mark>
         <lew-mark type="light" color="green">Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击这里跳转项目地址</a></lew-mark>
         <lew-mark color="red">免责声明：解析服务仅限小伙伴们学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
-        <lew-mark color="red">免责声明：解析服务仅限学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
+        
         <div class="copyright">© 2019 - 2024 Designed by 小赵同学</div>
       </lew-flex>
     </footer>
@@ -199,15 +200,10 @@ const openNewTab = (url) => {
               <img src="https://ice.frostsky.com/2024/09/15/f60383ddf991d44ca2899d47d85a5830.png" alt="粘贴播放">
             </div>
           </div>
-
-          <div class="tutorial-step">
-            <h3>温馨提示</h3>
             <div class="tutorial-text">
               <p>等待解析成功提示，即可免费观看各大平台VIP视频</p>
               <p>如果解析失败请更换解析渠道</p>
             </div>
-            </div>
-          </div>
         </div>
       </div>
       <template #footer></template>
