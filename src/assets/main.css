@@ -1,11 +1,23 @@
 @import './base.css';
 
-/* 应用容器 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 确保内容不会超出容器 */
+* {
+  box-sizing: border-box;
+}
+
+/* 应用容器基础样式 */
 .app-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  overflow-x: hidden; /* 防止水平滚动 */
 }
 
 /* 基础文本样式 */
