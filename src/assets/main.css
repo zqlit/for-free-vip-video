@@ -1,16 +1,17 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
+/* 应用容器 */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: 1rem;
 }
 
-/* 链接样式 */
+/* 基础文本样式 */
 a {
-  text-decoration: none;
   color: #0066cc;
+  text-decoration: none;
   transition: color 0.2s;
 }
 
@@ -19,12 +20,8 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 响应式布局 */
+/* 通用响应式布局 */
 @media (max-width: 768px) {
-  #app {
-    padding: 1rem;
-  }
-
   .control-panel {
     grid-template-columns: 1fr;
   }
