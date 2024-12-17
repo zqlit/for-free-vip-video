@@ -7,29 +7,33 @@
   font-weight: normal;
 }
 
-a,
-.green {
+/* 链接样式 */
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  color: #0066cc;
+  transition: color 0.2s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a:hover {
+  color: #0052a3;
+  text-decoration: underline;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
+/* 响应式布局 */
+@media (max-width: 768px) {
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    padding: 1rem;
+  }
+
+  .control-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .control-buttons {
+    justify-content: center;
+  }
+
+  .tutorial-wrapper {
+    height: 70vh;
   }
 }
