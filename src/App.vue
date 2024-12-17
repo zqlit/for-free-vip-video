@@ -212,6 +212,15 @@ const openNewTab = (url) => {
 </template>
 
 <style scoped>
+/* 容器样式 */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
 /* 头部样式 */
 .header {
   display: flex;
@@ -230,7 +239,7 @@ const openNewTab = (url) => {
 /* 控制面板样式 */
 .control-panel {
   display: grid;
-  grid-template-columns: minmax(130px, auto) 1fr auto;
+  grid-template-columns: minmax(130px, auto) 1fr minmax(170px, auto);
   gap: 1rem;
   align-items: center;
   margin: 2rem 0;
@@ -241,6 +250,7 @@ const openNewTab = (url) => {
 
 .parser-select {
   min-width: 130px;
+  width: 100%;
 }
 
 .url-input {
@@ -250,9 +260,12 @@ const openNewTab = (url) => {
 .control-buttons {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .control-button {
+  flex: 1;
   min-width: 80px;
 }
 
@@ -355,5 +368,43 @@ const openNewTab = (url) => {
   height: auto;
   display: block;
   border-radius: 4px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .control-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .control-buttons {
+    justify-content: center;
+  }
+  
+  .control-button {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+  
+  .tutorial-wrapper {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0.5rem;
+  }
+  
+  .control-panel {
+    padding: 0.5rem;
+  }
+  
+  .control-button {
+    min-width: 100%;
+  }
 }
 </style>
