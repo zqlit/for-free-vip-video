@@ -152,7 +152,7 @@ const openNewTab = (url) => {
         <lew-mark type="light" color="green">Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击这里跳转项目地址</a></lew-mark>
         <lew-mark color="red">免责声明：解析服务仅限小伙伴们学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
         <lew-mark color="red">免责声明：解析服务仅限学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
-        <div class="copyright">© 2024 Power by Misk</div>
+        <div class="copyright">© 2019 - 2024 Designed by 小赵同学</div>
       </lew-flex>
     </footer>
 
