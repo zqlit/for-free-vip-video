@@ -1,35 +1,48 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 确保内容不会超出容器 */
+* {
+  box-sizing: border-box;
+}
+
+/* 应用容器基础样式 */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  overflow-x: hidden; /* 防止水平滚动 */
 }
 
-a,
-.green {
+/* 基础文本样式 */
+a {
+  color: #0066cc;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  transition: color 0.2s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a:hover {
+  color: #0052a3;
+  text-decoration: underline;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+/* 通用响应式布局 */
+@media (max-width: 768px) {
+  .control-panel {
+    grid-template-columns: 1fr;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  .control-buttons {
+    justify-content: center;
+  }
+
+  .tutorial-wrapper {
+    height: 70vh;
   }
 }
