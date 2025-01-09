@@ -1,33 +1,62 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { LewMessage } from 'lew-ui'; 
+import { LewMessage } from 'lew-ui';
 
 //生命周期钩子
 onMounted(() => {
-  //重要的事情说三遍
-  LewNotification.success({
-    title: '温馨提示',
-    content: '如果您是第一次使用本站，请先阅读新手教程',
-    delay: 30000
-  })
-  LewNotification.success({
-    title: '温馨提示',
-    content: '如果您是第一次使用本站，请先阅读新手教程',
-    delay: 30000
-  })
-  LewNotification.success({
-    title: '温馨提示',
-    content: '如果您是第一次使用本站，请先阅读新手教程',
-    delay: 30000
-  })
-});
+  // 检查 sessionStorage 中是否有记录
+  const hasSeenTutorial = sessionStorage.getItem('hasSeenTutorial');
 
+  if (!hasSeenTutorial) {
+    // 第一次使用，显示提示信息
+    // 重要的事情提醒三次 所以循环三次
+    for (let i = 0; i < 3; i++) {
+      LewNotification.success({
+        title: '温馨提示',
+        content: '如果您是第一次使用本站，请先阅读新手教程',
+        delay: 30000
+      });
+    }
+
+    // 设置标志位，标记已经显示过提示
+    sessionStorage.setItem('hasSeenTutorial', 'true');
+  }
+});
 
 const options = ref([
   { label: '虾米解析', value: 'https://jx.xmflv.com/?url=' },
   { label: '八戒解析', value: 'https://jx.m3u8.tv/jiexi/?url=' },
   { label: '唐僧解析', value: 'https://jx.xmflv.cc/?url=' },
-  { label: '悟空解析', value: 'https://bd.jx.cn/?url=' }
+  { label: '悟空解析', value: 'https://bd.jx.cn/?url=' },
+  { label: '爱豆', value: 'https://jx.aidouer.net/?url=' },
+  { label: 'OK解析', value: 'https://okjx.cc/?url=' },
+  { label: '纯净/B站', value: 'https://im1907.top/?jx=' },
+  { label: '诺讯', value: 'https://www.nxflv.com/?url=' },
+  { label: '夜幕', value: 'https://www.yemu.xyz/?url=' },
+  { label: 'yangtu', value: 'https://jx.yangtu.top/?url=' },
+  { label: '人人迷', value: 'https://jx.blbo.cc=>4433/?url=' },
+  { label: '综合/B站', value: 'https://jx.jsonplayer.com/player/?url=' },
+  { label: '全民', value: 'https://jx.blbo.cc=>4433/?url=' },
+  { label: '七哥', value: 'https://jx.nnxv.cn/tv.php?url=' },
+  { label: '冰豆', value: 'https://api.qianqi.net/vip/?url=' },
+  { label: '迪奥', value: 'https://123.1dior.cn/?url=' },
+  { label: 'CK', value: 'https://www.ckplayer.vip/jiexi/?url=' },
+  { label: 'ckmov', value: 'https://www.ckmov.vip/api.php?url=' },
+  { label: 'playerjy/B站', value: 'https://jx.playerjy.com/?url=' },
+  { label: 'ccyjjd', value: 'https://ckmov.ccyjjd.com/ckmov/?url=' },
+  { label: '诺诺', value: 'https://www.ckmov.com/?url=' },
+  { label: 'H8', value: 'https://www.h8jx.com/jiexi.php?url=' },
+  { label: 'BL', value: 'https://vip.bljiex.com/?v=' },
+  { label: '解析la', value: 'https://api.jiexi.la/?url=' },
+  { label: 'MUTV', value: 'https://jiexi.janan.net/jiexi/?url=' },
+  { label: 'MAO', value: 'https://www.mtosz.com/m3u8.php?url=' },
+  { label: '盘古', value: 'https://www.pangujiexi.cc/jiexi.php?url=' },
+  { label: '0523', value: 'https://go.yh0523.cn/y.cy?url=' },
+  { label: '17云', value: 'https://www.1717yun.com/jx/ty.php?url=' },
+  { label: '4K', value: 'https://jx.4kdv.com/?url=' },
+  { label: '8090', value: 'https://www.8090g.cn/?url=' },
+  { label: '180', value: 'https://jx.000180.top/jx/?url=' },
+  { label: '无名', value: 'https://www.administratorw.com/video.php?url=' }
 ]);
 
 const videoUrl = ref('');
@@ -78,20 +107,20 @@ const openNewTab = (url) => {
     <!-- 头部区域 -->
     <div class="header">
       <h1 class="title">VIP免费视频解析</h1>
-      <lew-button 
-        color="black" 
-        size="medium" 
-        text="使用教程" 
-        dashed 
-        type="ghost" 
-        @click="toggleTutorial" 
+      <lew-button
+        color="black"
+        size="medium"
+        text="使用教程"
+        dashed
+        type="ghost"
+        @click="toggleTutorial"
       />
     </div>
 
     <!-- 控制面板 -->
     <div class="control-panel">
       <div class="parser-select">
-        <lew-select 
+        <lew-select
           v-model="jxUrl"
           clearable
           size="medium"
@@ -99,7 +128,7 @@ const openNewTab = (url) => {
           :options="options"
         />
       </div>
-      
+
       <div class="url-input">
         <lew-input
           v-model="videoUrl"
@@ -108,9 +137,9 @@ const openNewTab = (url) => {
           selectByFocus="true"
         />
       </div>
-      
+
       <div class="control-buttons">
-        <lew-button 
+        <lew-button
           class="control-button"
           :request="handleRequest"
           text="播放"
@@ -139,7 +168,7 @@ const openNewTab = (url) => {
     <footer class="footer">
       <lew-flex direction="y" gap="20">
         <lew-mark color="red">注意：视频如果有广告是解析接口内置与本站无关，请勿相信！</lew-mark>
-        
+
         <div class="video-platforms">
           <lew-flex wrap x="center" gap="10">
             <lew-button size="medium" @click="openNewTab('https://v.qq.com')" text="进入腾讯视频" color="black" dashed type="ghost" />
@@ -149,11 +178,11 @@ const openNewTab = (url) => {
             <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="black" dashed type="ghost" />
           </lew-flex>
         </div>
-        <lew-mark color="green">本项目已开源Github,欢迎star✌️! </lew-mark>
-        <lew-mark type="light" color="green">Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击这里跳转项目地址</a></lew-mark>
-        <lew-mark color="red">免责声明：解析服务仅限小伙伴们学习用途！对于一些不法分子破坏视频版权行为，本站将坚决抵制！</lew-mark>
-        
-        <div class="copyright">© 2019 - 2024 Designed by 小赵同学</div>
+        <lew-mark color="green">本项目已开源至Github,请star后在使用(这对我很重要😘)</lew-mark>
+        <lew-mark type="light" color="green">Github地址 : <a target="_blank" color="green" href="https://github.com/imzql/for-free-vip-video">点我前往GitHub项目地址</a></lew-mark>
+        <lew-mark color="red">免责声明：解析服务仅限学习使用，严禁使用非法获利，请尊重视频版权，营造良好的电影环境，谢谢合作😘</lew-mark>
+
+        <div class="copyright">© 2019 - 2025 Designed By Vaica</div>
       </lew-flex>
     </footer>
 
@@ -375,20 +404,20 @@ const openNewTab = (url) => {
   .app-container {
     padding: 1rem;
   }
-  
+
   .control-panel {
     grid-template-columns: 1fr;
   }
-  
+
   .control-buttons {
     justify-content: center;
   }
-  
+
   .control-button {
     flex: 1 1 auto;
     min-width: 120px;
   }
-  
+
   .tutorial-wrapper {
     height: 70vh;
   }
@@ -398,11 +427,11 @@ const openNewTab = (url) => {
   .app-container {
     padding: 0.5rem;
   }
-  
+
   .control-panel {
     padding: 0.5rem;
   }
-  
+
   .control-button {
     min-width: 100%;
   }
