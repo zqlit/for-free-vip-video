@@ -64,17 +64,39 @@ const iframeUrl = ref(options.value[0].value);
 const jxUrl = ref(options.value[0].value);
 const showModal = ref(false);
 
+// 判断是否包含中文的正则表达式
+const hasChinese = /[\u4e00-\u9fa5]/;
+
 const updateIframeUrl = () => {
+  if (hasChinese.test(videoUrl.value)) {
+    // 如果视频链接包含中文，显示错误消息并终止
+    LewMessage.error({
+      content: `解析失败，您填写的地址有误，地址请不要包含中文字符\n务必只粘贴网址（例如：https://qunlin.deno.dev)\n否则无法正常解析成功！`,
+      duration: 6000
+    });
+    return false; // 返回 false 表示更新失败
+  }
+
+  // 检查并更新 iframeUrl
   if (jxUrl.value && videoUrl.value) {
     iframeUrl.value = `${jxUrl.value}${videoUrl.value}`;
   } else {
     iframeUrl.value = options.value[0].value;
   }
+
+  return true; // 返回 true 表示更新成功
 };
 
 const handleRequest = () => {
-  updateIframeUrl();
-  if (iframeUrl.value != options.value[0].value) {
+  // 调用 updateIframeUrl 并判断是否成功
+  const isUpdated = updateIframeUrl();
+
+  if (!isUpdated) {
+    // 如果 updateIframeUrl 返回 false，直接终止操作
+    return;
+  }
+
+  if (iframeUrl.value !== options.value[0].value) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
@@ -85,7 +107,7 @@ const handleRequest = () => {
     LewMessage.error({
       content: '错误：请先填写视频链接再提交,谢谢合作！',
       duration: 3000
-    })
+    });
   }
 };
 
