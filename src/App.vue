@@ -25,7 +25,7 @@ onMounted(() => {
 
 const options = ref([
   { label: '虾米解析【推荐线路】', value: 'https://jx.xmflv.com/?url=' },
-  { label: 'playerjy/B站【推荐线路】', value: 'https://jx.playerjy.com/?url=' },
+  { label: 'pyjy/B站【推荐线路】', value: 'https://jx.playerjy.com/?url=' },
   { label: '夜幕【推荐线路】', value: 'https://www.yemu.xyz/?url=' },
   { label: '八戒解析', value: 'https://jx.m3u8.tv/jiexi/?url=' },
   { label: '唐僧解析', value: 'https://jx.xmflv.cc/?url=' },
