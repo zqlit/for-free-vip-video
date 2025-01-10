@@ -24,39 +24,15 @@ onMounted(() => {
 });
 
 const options = ref([
-  { label: '虾米解析', value: 'https://jx.xmflv.com/?url=' },
+  { label: '虾米解析【推荐线路】', value: 'https://jx.xmflv.com/?url=' },
+  { label: 'playerjy/B站【推荐线路】', value: 'https://jx.playerjy.com/?url=' },
+  { label: '夜幕【推荐线路】', value: 'https://www.yemu.xyz/?url=' },
   { label: '八戒解析', value: 'https://jx.m3u8.tv/jiexi/?url=' },
   { label: '唐僧解析', value: 'https://jx.xmflv.cc/?url=' },
   { label: '悟空解析', value: 'https://bd.jx.cn/?url=' },
-  { label: '爱豆', value: 'https://jx.aidouer.net/?url=' },
-  { label: 'OK解析', value: 'https://okjx.cc/?url=' },
   { label: '纯净/B站', value: 'https://im1907.top/?jx=' },
-  { label: '诺讯', value: 'https://www.nxflv.com/?url=' },
-  { label: '夜幕', value: 'https://www.yemu.xyz/?url=' },
-  { label: 'yangtu', value: 'https://jx.yangtu.top/?url=' },
-  { label: '人人迷', value: 'https://jx.blbo.cc=>4433/?url=' },
-  { label: '综合/B站', value: 'https://jx.jsonplayer.com/player/?url=' },
-  { label: '全民', value: 'https://jx.blbo.cc=>4433/?url=' },
   { label: '七哥', value: 'https://jx.nnxv.cn/tv.php?url=' },
-  { label: '冰豆', value: 'https://api.qianqi.net/vip/?url=' },
-  { label: '迪奥', value: 'https://123.1dior.cn/?url=' },
-  { label: 'CK', value: 'https://www.ckplayer.vip/jiexi/?url=' },
-  { label: 'ckmov', value: 'https://www.ckmov.vip/api.php?url=' },
-  { label: 'playerjy/B站', value: 'https://jx.playerjy.com/?url=' },
-  { label: 'ccyjjd', value: 'https://ckmov.ccyjjd.com/ckmov/?url=' },
-  { label: '诺诺', value: 'https://www.ckmov.com/?url=' },
-  { label: 'H8', value: 'https://www.h8jx.com/jiexi.php?url=' },
-  { label: 'BL', value: 'https://vip.bljiex.com/?v=' },
-  { label: '解析la', value: 'https://api.jiexi.la/?url=' },
-  { label: 'MUTV', value: 'https://jiexi.janan.net/jiexi/?url=' },
-  { label: 'MAO', value: 'https://www.mtosz.com/m3u8.php?url=' },
-  { label: '盘古', value: 'https://www.pangujiexi.cc/jiexi.php?url=' },
-  { label: '0523', value: 'https://go.yh0523.cn/y.cy?url=' },
-  { label: '17云', value: 'https://www.1717yun.com/jx/ty.php?url=' },
-  { label: '4K', value: 'https://jx.4kdv.com/?url=' },
-  { label: '8090', value: 'https://www.8090g.cn/?url=' },
-  { label: '180', value: 'https://jx.000180.top/jx/?url=' },
-  { label: '无名', value: 'https://www.administratorw.com/video.php?url=' }
+  { label: 'CK', value: 'https://www.ckplayer.vip/jiexi/?url=' }
 ]);
 
 const videoUrl = ref('');
