@@ -114,6 +114,9 @@ const openNewTab = (url) => {
         @click="toggleTutorial"
       />
     </div>
+    <lew-flex direction="y" gap="20">
+    <lew-mark color="green">温馨提示：部分小伙伴反馈，bilibili的链接有些无法正常播放，大概率是bilibili的b23的短链接【例如：https://b23.tv/ep1307079】，这种链接是无法解析的，推荐用电脑浏览器打开，直接复制浏览器地址栏的地址粘贴到下方播放，手机分享复制链接，会携带一些中文字符在里面，需要把中文字符去掉，只保留https开头的视频链接才能正常解析哦，并非本程序的bug，另外悄悄告诉你，使用推荐线路，解析速度更快哦，本程序仅做学习交流，请勿用于非法用途，谢谢合作！😘</lew-mark>
+    </lew-flex>
 
     <!-- 控制面板 -->
     <div class="control-panel">
