@@ -192,8 +192,9 @@ let visibleInfo = ref(true)
     <!-- 底部区域 -->
     <footer class="footer">
       <lew-flex direction="y" gap="20">
+        <lew-mark type="light" color="green">开发不易，点个Star鼓励一下吧，Github地址 : <a target="_blank" style="color: green" href="https://github.com/imzql/for-free-vip-video">点击前往GitHub项目地址</a></lew-mark>
         <lew-mark color="red">注意：视频如果有广告是解析接口内置与本站无关，请勿相信！</lew-mark>
-
+        <lew-mark color="red">免责声明：解析服务仅限学习使用，严禁使用非法获利，请尊重视频版权，营造良好的电影环境，谢谢合作😘</lew-mark>
         <div class="video-platforms">
           <lew-flex wrap x="center" gap="10">
             <lew-button size="medium" @click="openNewTab('https://v.qq.com')" text="进入腾讯视频" color="black" dashed type="ghost" />
@@ -203,9 +204,6 @@ let visibleInfo = ref(true)
             <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="black" dashed type="ghost" />
           </lew-flex>
         </div>
-        <lew-mark type="light" color="green">本项目已开源至Github,请Star后在使用(这对我很重要😘)  Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击前往GitHub项目地址</a></lew-mark>
-        <lew-mark color="red">免责声明：解析服务仅限学习使用，严禁使用非法获利，请尊重视频版权，营造良好的电影环境，谢谢合作😘</lew-mark>
-        <div class="copyright">© 2019 - 2025 Designed By Vaica</div>
         <lew-flex direction="x" >
           <a title="GitHub Watchers" target="_blank" href="https://github.com/zqlit/for-free-vip-video/watchers">
             <img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/zqlit/for-free-vip-video.svg?label=Watchers&style=social">
@@ -217,6 +215,7 @@ let visibleInfo = ref(true)
             <img alt="GitHub Forks" src="https://img.shields.io/github/forks/zqlit/for-free-vip-video.svg?label=Forks&style=social">
           </a>
         </lew-flex>
+        <div class="copyright">© 2019 - 2025 Designed By Vaica</div>
       </lew-flex>
     </footer>
 
@@ -364,7 +363,6 @@ let visibleInfo = ref(true)
 }
 
 .copyright {
-  margin-top: 1rem;
   color: #666;
   font-size: 0.9rem;
 }
