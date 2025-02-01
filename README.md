@@ -71,3 +71,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 如有任何问题或建议，请在 [GitHub](https://github.com/zqlit/for-free-vip-video/issues) 上提交问题。  
 For any questions or issues, please open an issue on [GitHub](https://github.com/zqlit/for-free-vip-video/issues).
 
+## 鸣谢 (Thanks)
+
+感谢这些小伙伴们在开发提供的支持!
+
+<a href="https://github.com/zqlit"><img src="https://avatars.githubusercontent.com/u/94612053?s=48&v=4"></a>
+<a href="https://github.com/Misk00"><img src="https://avatars.githubusercontent.com/u/106099647?s=48&v=4"></a>

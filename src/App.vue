@@ -98,6 +98,10 @@ const closeModal = () => {
 const openNewTab = (url) => {
   window.open(url, '_blank');
 };
+
+// 用户提示模块js代码
+let visibleWarning = ref(true)
+let visibleInfo = ref(true)
 </script>
 
 <template>
@@ -115,7 +119,25 @@ const openNewTab = (url) => {
       />
     </div>
     <lew-flex direction="y" gap="20">
-    <lew-mark color="green">温馨提示：部分小伙伴反馈，bilibili的链接有些无法正常播放，大概率是bilibili的b23的短链接【例如：https://b23.tv/ep1307079】，这种链接是无法解析的，推荐用电脑浏览器打开，直接复制浏览器地址栏的地址粘贴到下方播放，手机分享复制链接，会携带一些中文字符在里面，需要把中文字符去掉，只保留https开头的视频链接才能正常解析哦，并非本程序的bug，另外悄悄告诉你，使用推荐线路，解析速度更快哦，本程序仅做学习交流，请勿用于非法用途，谢谢合作！😘</lew-mark>
+    <!--用户提示模块-->
+      <lew-alert
+          v-if="visibleInfo"
+          type="success"
+          closeable
+          @close="visibleInfo = false"
+      >
+        <template #title>温馨提示</template>
+        <template #content size="medium"
+        >部分小伙伴反馈，bilibili的链接有些无法正常播放，大概率是bilibili的b23的短链接【例如：https://b23.tv/ep1307079】，这种链接是无法解析的，推荐用电脑浏览器打开，直接复制浏览器地址栏的地址粘贴到下方播放，手机分享复制链接，会携带一些中文字符在里面，需要把中文字符去掉，只保留https开头的视频链接才能正常解析哦，并非本程序的bug，另外悄悄告诉你，使用推荐线路，解析速度更快哦，本程序仅做学习交流，请勿用于非法用途，谢谢合作！😘</template
+        >
+        <template #footer>
+          <lew-flex x="end">
+            <lew-button color="success" size="small" @click="visibleInfo = false">我知道了</lew-button>
+          </lew-flex>
+        </template>
+      </lew-alert>
+    <!--用户提示模块结束-->
+    <!--<lew-mark color="green">温馨提示：部分小伙伴反馈，bilibili的链接有些无法正常播放，大概率是bilibili的b23的短链接【例如：https://b23.tv/ep1307079】，这种链接是无法解析的，推荐用电脑浏览器打开，直接复制浏览器地址栏的地址粘贴到下方播放，手机分享复制链接，会携带一些中文字符在里面，需要把中文字符去掉，只保留https开头的视频链接才能正常解析哦，并非本程序的bug，另外悄悄告诉你，使用推荐线路，解析速度更快哦，本程序仅做学习交流，请勿用于非法用途，谢谢合作！😘</lew-mark>-->
     </lew-flex>
 
     <!-- 控制面板 -->
@@ -145,11 +167,13 @@ const openNewTab = (url) => {
           :request="handleRequest"
           text="播放"
           type="light"
+          color="green"
         />
         <lew-button
           class="control-button"
           text="清空"
           type="light"
+          color="green"
           @click="videoUrl = ''; iframeUrl = options[0].value"
         />
       </div>
@@ -179,11 +203,20 @@ const openNewTab = (url) => {
             <lew-button size="medium" @click="openNewTab('https://www.mgtv.com')" text="进入芒果视频" color="black" dashed type="ghost" />
           </lew-flex>
         </div>
-        <lew-mark color="green">本项目已开源至Github,请star后在使用(这对我很重要😘)</lew-mark>
-        <lew-mark type="light" color="green">Github地址 : <a target="_blank" color="green" href="https://github.com/imzql/for-free-vip-video">点我前往GitHub项目地址</a></lew-mark>
+        <lew-mark type="light" color="green">本项目已开源至Github,请Star后在使用(这对我很重要😘)  Github地址 : <a target="_blank" href="https://github.com/imzql/for-free-vip-video">点击前往GitHub项目地址</a></lew-mark>
         <lew-mark color="red">免责声明：解析服务仅限学习使用，严禁使用非法获利，请尊重视频版权，营造良好的电影环境，谢谢合作😘</lew-mark>
-
         <div class="copyright">© 2019 - 2025 Designed By Vaica</div>
+        <lew-flex direction="x" >
+          <a title="GitHub Watchers" target="_blank" href="https://github.com/zqlit/for-free-vip-video/watchers">
+            <img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/zqlit/for-free-vip-video.svg?label=Watchers&style=social">
+          </a>
+          <a title="GitHub Stars" target="_blank" href="https://github.com/zqlit/for-free-vip-video/stargazers">
+            <img alt="GitHub Stars" src="https://img.shields.io/github/stars/zqlit/for-free-vip-video.svg?label=Stars&style=social">
+          </a>
+          <a title="GitHub Forks" target="_blank" href="https://github.com/zqlit/for-free-vip-video/network/members">
+            <img alt="GitHub Forks" src="https://img.shields.io/github/forks/zqlit/for-free-vip-video.svg?label=Forks&style=social">
+          </a>
+        </lew-flex>
       </lew-flex>
     </footer>
 
