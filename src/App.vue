@@ -192,7 +192,7 @@ let visibleInfo = ref(true)
     <!-- 底部区域 -->
     <footer class="footer">
       <lew-flex direction="y" gap="20">
-        <lew-mark type="light" color="green">开发不易，点个Star鼓励一下吧，Github地址 : <a target="_blank" style="color: green" href="https://github.com/imzql/for-free-vip-video">点击前往GitHub项目地址</a></lew-mark>
+        <lew-mark type="light" color="green">开发不易，点个Star鼓励一下吧，Github地址 : <a target="_blank" style="color: #3b7852" href="https://github.com/imzql/for-free-vip-video">https://github.com/zqlit/for-free-vip-video</a></lew-mark>
         <lew-mark color="red">注意：视频如果有广告是解析接口内置与本站无关，请勿相信！</lew-mark>
         <lew-mark color="red">免责声明：解析服务仅限学习使用，严禁使用非法获利，请尊重视频版权，营造良好的电影环境，谢谢合作😘</lew-mark>
         <div class="video-platforms">
